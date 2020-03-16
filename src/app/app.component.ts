@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { Userpage1Component } from './userpage/userpage1/userpage1.component';
-import { NgbModule, NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import{NgbModule,NgbModal}from'@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +9,4 @@ import { NgbModule, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 export class AppComponent {
   title = 'project';
   constructor( ) { }
-  
- 
-
 }

@@ -1,0 +1,33 @@
+h1{
+color: blue;
+width: 9cm;
+text-align: center;
+font-family: Verdana, Geneva, Tahoma, sans-serif, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.custom-select{
+    width: 6cm;
+    height: 1cm;
+}
+.card{
+    border:0px ;
+    background: #fff;
+    padding: 50px 30px 200px;
+    box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.418);
+    box-sizing: content-box;
+    width: 10cm;
+    height: 5cm;
+border-radius: 5mm;
+text-align: center;
+    
+}
+.button{
+    font-size: 20mm;
+    color: darkgreen;
+width: 70mm;
+height: 2cm;
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
+}
+
+.section{
+    background-color: rgb(165, 168, 170);
+}

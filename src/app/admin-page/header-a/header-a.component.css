@@ -1,0 +1,57 @@
+.navbar-default .navbar-brand {
+    color: #5FCF80;
+}
+.navbar-default {
+    background-color: #ffffff;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #717f86;
+    font-size: 14px;
+    font-weight: 700;
+}
+h1{
+    color: blue;
+}
+
+
+
+
+.navbar-default .navbar-brand {
+    font-family: 'Dosis', sans-serif !important;
+    font-weight: 600;
+    text-transform: uppercase;
+
+    height: inherit;
+    font-size: 36px;
+
+    
+}
+.navbar-default .navbar-brand span{
+	font-weight: 100 !important;
+}
+
+
+.btn-trial a:hover, .btn-trial a:focus{
+	border: 1px solid #5FCF80;
+	background-color: #fff;
+	color: #5FCF80 !important;
+}
+a:hover, a:focus{
+    color: #5fcf80;
+}
+
+i{
+    size: 20cm;
+    color: black;
+    justify-content: left;
+padding-top: 6mm;
+}
+
+.class{
+    font-family: 'Alegreya Sans', sans-serif; 
+    
+        text-align: center;  
+        font-size: 6mm;
+}
+
