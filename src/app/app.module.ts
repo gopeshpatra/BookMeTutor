@@ -15,6 +15,26 @@ import { UserpageComponent } from './userpage/userpage.component';
 import { ModalModule } from "ngx-bootstrap";
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { AppRoutingModule } from './app-routing.module';
+import { TutorPageComponent } from './tutor-page/tutor-page.component';
+import { AvailableBookingComponent } from './tutor-page/available-booking/available-booking.component';
+import { AcceptedBookingComponent } from './tutor-page/accepted-booking/accepted-booking.component';
+import { Header1Component } from './tutor-page/header1/header1.component';
+import { Footer1Component } from './tutor-page/footer1/footer1.component';
+import { SectionComponent } from './tutor-page/section/section.component';
+import { AdminPageComponent } from './admin-page/admin-page.component';
+
+import { HeaderAComponent } from './admin-page/header-a/header-a.component';
+import { SectionAComponent } from './admin-page/section-a/section-a.component';
+import { FooterAComponent } from './admin-page/footer-a/footer-a.component';
+import { AdminTComponent } from './admin-page/admin-t/admin-t.component';
+import { CancleComponent } from './cancle/cancle.component';
+import { HeaderCComponent } from './cancle/header-c/header-c.component';
+import { FooterCComponent } from './cancle/footer-c/footer-c.component';
+import { SectionCComponent } from './cancle/section-c/section-c.component';
+import { ReschduleComponent } from './reschdule/reschdule.component';
+import { FooterRComponent } from './reschdule/footer-r/footer-r.component';
+import { HeaderRComponent } from './reschdule/header-r/header-r.component';
+import { SectionRComponent } from './reschdule/section-r/section-r.component';
 
 
 
@@ -31,6 +51,34 @@ import { AppRoutingModule } from './app-routing.module';
     HomepageComponent,
     Userpage1Component,
     UserpageComponent,
+    TutorPageComponent,
+    AvailableBookingComponent,
+    AcceptedBookingComponent,
+    Header1Component,
+    Footer1Component,
+    SectionComponent,
+    AdminPageComponent,
+    FooterAComponent,
+    HeaderAComponent,
+    SectionAComponent,
+   
+    AdminTComponent,
+   
+    CancleComponent,
+   
+    HeaderCComponent,
+   
+    FooterCComponent,
+   
+    SectionCComponent,
+   
+    ReschduleComponent,
+   
+    FooterRComponent,
+   
+    HeaderRComponent,
+   
+    SectionRComponent 
     
   
     
@@ -41,9 +89,10 @@ import { AppRoutingModule } from './app-routing.module';
     NgbModule,
     ModalModule.forRoot(),
     AngularFontAwesomeModule,
-    AppRoutingModule
+    AppRoutingModule,
    
   ],
+ 
   providers: [],
   bootstrap: [AppComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]

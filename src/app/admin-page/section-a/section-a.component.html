@@ -1,0 +1,83 @@
+//login.html
+<div class="container">
+    <br><br><br><br>
+  
+    <a class="container" href="#index.html"></a>
+<div class="col-md-12">
+    <div class="card">
+      
+      <h1><u>Login Page</u></h1>
+      <br>
+      <form ng-submit="formSubmit()" class="form">
+        <div class="col-md-4">
+          <div class="form-group">
+            <input type="text" class="form-control" ng-model="username" placeholder="AdminName" required=""/>
+          </div> 
+
+          <div class="form-group">
+            <input type="password" class="form-control" ng-model="password" placeholder="password" required=""/>
+          </div>
+          
+          <div class="form-group">
+            <br>
+            
+        
+       
+            
+            <p>
+              <button type="submit" class="btn btn-success" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+              Login
+              </button>
+              &nbsp;
+              &nbsp;
+           <button type="reset" class="btn btn-success">Reset</button>
+              <span class="text-danger" style="color:red">{{ error }}</span>
+           
+            </p><br><br>
+            <div class="collapse" id="collapseExample">
+             
+                <div class="container">
+
+                  <h2>Available Teachers</h2>
+                  
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th>Tutor Details</th>
+                        <th>NO. of session Completed</th>
+                        <th>Average Rating</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>ID-123 &nbsp;&nbsp; Name-pia&nbsp;&nbsp; Locality-bndm</td>
+                        <td>5</td>
+                        <td>4</td>
+                        <td> <button type="submit" class="btn btn-success">Booking Details</button></td>
+                      </tr>
+                      <tr>
+                        <td>ID-123&nbsp;&nbsp; Name-pia &nbsp;&nbsp;Locality-bndm</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td> <button type="submit" class="btn btn-success">Booking Details</button></td>
+                      </tr>
+                      <tr>
+                        <td>ID-123 &nbsp;&nbsp;Name-pia &nbsp;&nbsp; Locality-bndm</td>
+                  
+                        <td>5</td>
+                        <td>2</td>
+                        <td> <button type="submit" class="btn btn-success">Booking Details</button></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    </div>
+</div>

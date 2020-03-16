@@ -1,0 +1,49 @@
+.jumbotron{
+    width: 30cm;
+    align-self: baseline;
+    height: 9cm;
+   background-color: rgba(52, 52, 53, 0.746)
+   
+}
+h1{
+    font-family: 'Alegreya Sans', sans-serif;
+    text-align: center;
+    border: 5px solid #5FCF80;
+
+  
+    color: ivory;
+    
+}
+h2{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
+    font-size: 15mm;
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+
+p{
+    font-family: 'Alegreya Sans', sans-serif; 
+color: rgb(232, 231, 243);
+    text-align: center;  
+    font-size: 8mm;
+}
+
+.card{
+    border:1px ;
+    background: #fff;
+    padding: 60px 30px 80px;
+    box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.418);
+}
+.btn{
+    font-size: 5mm;
+    color: darkgreen;
+width: 60mm;
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
+}
+.dropdown-item{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+color: rgb(4, 4, 90);
+    text-align: left;  
+    font-size: 6mm;
+}
+
