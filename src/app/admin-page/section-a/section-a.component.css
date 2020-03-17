@@ -10,9 +10,10 @@ border-radius: 5mm;
     
 }
 h1{
-    color: blue;
-
-
+    color: darkblue;
+font-family: fantasy;
+font-style: oblique;
+font-size: 20mm;
     text-align: center;
 }
 .form-control{

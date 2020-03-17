@@ -1,8 +1,11 @@
 h1{
-color: blue;
+    font-size: 2cm;
+    font-family: fantasy;
+    font-style: oblique;
+color: darkblue;
 width: 9cm;
 text-align: center;
-font-family: Verdana, Geneva, Tahoma, sans-serif, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+padding-left: 3cm;
 }
 .custom-select{
     width: 6cm;
@@ -14,20 +17,30 @@ font-family: Verdana, Geneva, Tahoma, sans-serif, 'Lucida Sans Unicode', 'Lucida
     padding: 50px 30px 200px;
     box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.418);
     box-sizing: content-box;
-    width: 10cm;
-    height: 5cm;
+    width: 17cm;
+    height: 8cm;
 border-radius: 5mm;
 text-align: center;
     
 }
-.button{
+.btn .btn-primary{
     font-size: 20mm;
-    color: darkgreen;
+    color:darkblue;
 width: 70mm;
-height: 2cm;
-font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
+height: 4cm;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.section{
-    background-color: rgb(165, 168, 170);
+
+.text{
+    color: darkblue;
+    font-size: 1cm;
+    font-family: fantasy;
+    font-style: oblique;
+}
+.custom-select{
+    color: darkgreen;
+    font-style: oblique;
+    font-size: 6mm;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
