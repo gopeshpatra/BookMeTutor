@@ -14,9 +14,7 @@
         <li class="btn-trial"><a routerLink="/login" *ngIf="!authenticationService.LoggedIn()">Login</a></li>
         <li class="btn-trial"><a routerLink="/studentSignup" *ngIf="!authenticationService.LoggedIn()">Sign in</a></li>
 
-        <li class="btn-trial"><a routerLink="./profile" *ngIf="authenticationService.LoggedIn() && authenticationService.role==='student'">Profile</a></li>
-        <li class="btn-trial"><a   routerLink="./mybookings" *ngIf="authenticationService.LoggedIn() && authenticationService.role==='student'">My Bookings</a></li>
-        <li class="btn-trial"><a  *ngIf="authenticationService.LoggedIn()"(click)="authenticationService.LoggedOut()">Logout</a></li>
+        
       
       </ul>
     </div>

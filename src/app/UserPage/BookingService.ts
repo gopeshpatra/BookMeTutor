@@ -5,6 +5,7 @@ import { from, throwError, Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { retry, catchError } from 'rxjs/operators';
 import { Cancel } from './classes/cancel';
+import { JsonPipe } from '@angular/common';
 
 @Injectable({
         providedIn:'root'
@@ -30,9 +31,9 @@ headers:new HttpHeaders({
     'Content-Type':'application/json',
     'Authorization':localStorage.getItem('token')
     } ),
-    body:{
-      'reason' : ''
-    }
+    body:JSON.stringify({
+      reason : ''
+    })
  }
       
  constructor(private http:HttpClient,

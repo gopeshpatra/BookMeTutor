@@ -1,10 +1,45 @@
 <div class="row">
-    <div class="col-sm-6">
-      <div class="card"  >
-        <div class="card-body">
-          <h5 class="card-title">Booking ID:{{this.booking.id}}</h5>
-          <p class="card-text">Subject:{{this.booking.subject}}</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-    </div>
+  <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4" >
+     <div class="thumbnail">
+         <div class="caption">
+          
+           <div class='col-lg-12 well well-add-card'>
+               <h4><b>BOOKING ID:</b>{{this.booking.id}}                     
+                    <h5 class="pull-right"><b>Secret OTP :</b> {{this.booking.secret}}</h5> </h4>
+               
+           </div>
+           <div class='col-lg-12'>
+               <p><b>Class:</b>{{this.booking.classNumber}}</p>
+             <p><b>Board:</b>{{this.booking.board}}</p>
+               <p><b>Subject:</b>{{this.booking.subject}}</p>
+               <p><b>Topic:</b>{{this.booking.topic}}</p>
+               <p><b>Schedule:</b>{{this.booking.schedule}}</p>
+               <p><b>Deadline:</b>{{this.booking.deadline}}</p>
+               <p><b>Address:</b>{{this.booking.line1}} {{this.booking.line2}} {{this.booking.city}} {{this.booking.pincode}}</p>
+           </div>
+           <div class='col-lg-12'>
+             <div class="card  bg-danger mb-3">
+                 <div class="card-header">
+                     <p><b>Status:</b> </p>
+                 </div>
+                 <div class="card-body">
+                   <p class="card-title">{{this.booking.status}}</p>
+                 </div>
+                 </div>
+           </div>
+           <div class='col-lg-12'>
+             <div class="card  bg-info mb-3">
+                 <div class="card-header">
+                     <p><b>Invoice:</b> </p>
+                 </div>
+                 <div class="card-body">
+                   <p class="card-title">Rs {{this.booking.invoiceResponse.amount}}</p>
+                 </div>
+               </div>
+           </div>
+           <button type="button" class="btn btn-primary btn-xs btn-update btn-add-card" routerLink="/reset">Reschedule</button>
+           <button type="button" class="btn btn-danger btn-xs btn-update btn-add-card" (click)="deleteBooking(this.booking.id)">Cancel</button>
+       </div>
+     </div>
+   </div>
+   </div>

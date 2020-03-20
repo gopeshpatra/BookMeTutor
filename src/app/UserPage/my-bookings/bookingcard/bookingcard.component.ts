@@ -8,7 +8,7 @@ import { BookingResponse } from 'src/app/Response/bookingResponse';
 })
 export class BookingcardComponent implements OnInit {
 
-  @Input () booking:BookingResponse;
+  @Input() booking:BookingResponse[];
   constructor() { }
 
   ngOnInit() {

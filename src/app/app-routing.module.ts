@@ -21,17 +21,20 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
-  {path:'**',component:PagenotfoundComponent},
 
 
-  { path: 'userpage/mybookings', component: MyBookingsComponent,canActivate:[AuthGuard]},
-  { path: 'userpage/profile', component: StudentProfileComponent, canActivate:[AuthGuard] },
-  {path: 'userpage/reset', component: ResetBookingComponent, canActivate:[AuthGuard]},
- { path: 'userpage/booking', component: BookingPageComponent, canActivate:[AuthGuard]},
+{path:'userpage',component:UserpageComponent,
+children:[
+  { path: 'mybookings', component: MyBookingsComponent,canActivate:[AuthGuard]},
+  { path: 'profile', component: StudentProfileComponent, canActivate:[AuthGuard] },
+  {path: 'reset', component: ResetBookingComponent, canActivate:[AuthGuard]},
+ { path: 'booking', component: BookingPageComponent, canActivate:[AuthGuard]},
+]},
     
   { path: 'login', component:LoginComponent },
   { path: 'studentSignup', component:StudentRegComponent },
   { path: 'tutorSignup', component:TutorRegComponent},
+  
 
   
 
@@ -43,7 +46,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,{onSameUrlNavigation: 'reload'}),
+    ],
   exports: [RouterModule],
   providers:[AuthGuard,TutorGuard]
 })

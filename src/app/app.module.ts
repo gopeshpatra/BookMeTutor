@@ -46,6 +46,7 @@ import { StudentProfileComponent } from './userpage/student-profile/student-prof
 import { BookingPageComponent } from './userpage/booking-page/booking-page.component';
 import { ResetBookingComponent } from './userpage/reset-booking/reset-booking.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { Header2Component } from './header2/header2.component';
 
 
 
@@ -91,6 +92,9 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
     
    
     PagenotfoundComponent,
+    
+   
+    Header2Component,
     
    
    
