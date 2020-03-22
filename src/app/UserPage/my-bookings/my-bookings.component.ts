@@ -16,7 +16,7 @@ export class MyBookingsComponent implements OnInit {
 id:number
 
 responsebooking:BookingResponse[]
-cancelbooking:Cancel[]
+cancelbooking:BookingResponse[]
  
 
   constructor(private bookingservice: BookingService,
@@ -31,6 +31,8 @@ cancelbooking:Cancel[]
       {
         this.responsebooking=data
         })
+
+       
     
   }
 
@@ -38,15 +40,28 @@ cancelbooking:Cancel[]
      this.bookingservice.cancelBooking(id).subscribe(
       (data)=>{
         console.log("cancelled :"+id);
-    })
-    this.cancelbooking = this.cancelbooking.concat(this.responsebooking.splice(id, 1));;
-      
-     this.bookingservice.getBooking().subscribe(
+        Object.assign([],data)
+       })
+      }
+
+     
+      updatedbooking(){
+        this.bookingservice.getBooking().subscribe(
           data=>
-            {this.responsebooking=data;
-            this.changedetect.detectChanges()
-            })
-  }      
+            {
+              this.cancelbooking.push(data)
+          })
+      }
+
+       
+    
+
+ 
+     
+      
+     
+  
+      
           
         
       

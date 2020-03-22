@@ -211,6 +211,7 @@ saveDetails()
    
       error=>{
              console.log(error)
+             alert("Booking Placed")
              this.router.navigate(['/userpage/booking'])
              
             }
