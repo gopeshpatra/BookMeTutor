@@ -1,70 +1,35 @@
-<app-tutor-page-header></app-tutor-page-header>
 <div class="container">
-    <br><br><br><br>
-  
-    <a class="container" href="#index.html"></a>
-<div class="row">
-    <div class="col-sm-6">
-      <div class="card">
-        <div class="card-body">
-          <h2 class="card-title">AcceptedBooking</h2>
-
-          <p>
-            <a class="btn btn-primary" data-toggle="collapse" href="tutorpage/#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample">
-              BookingId-124 <br>
-              StudentName-Khushboo
-            </a>
-         
-          </p>
-          <div class="collapse" id="tutorpage/#collapseExample1">
-            <div class="dropdown-item">
-              <a class="dropdown-item" type="text">BookingID-123</a><br>
-              <a class="dropdown-item" type="text">StudentName-Khushboo</a><br>
-              <a class="dropdown-item" type="text">Address-Bondamunda</a><br>
-              <a class="dropdown-item" type="text">Board-CBSE</a><br>
-              <a class="dropdown-item" type="text">Class-10</a><br>
-              <a class="dropdown-item" type="text">Topic-Algebra</a><br>
-              <a class="dropdown-item" type="text">Time Slot-10:30-11:30</a><br>
-              <input type="number"class="dropdown-item" id="otp" placeholder="OTP"><br><br>
-              <button class="dropdown-item" type="text">End Session</button>
-            </div>
+  <div class="row">
+    <div class="col-sm-12 col-md-6">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h4>Available Bookings</h4>
+        </div>
+        <div class="panel-body">
+          <div class="container-fluid">
+            <app-availableBooking
+              (statusChange)="reloadData()"
+              [booking]="booking"
+              *ngFor="let booking of availableBookings"
+            ></app-availableBooking>
           </div>
         </div>
       </div>
     </div>
-  
-
-          <div class="col-sm-6">
-      <div class="card">
-        <div class="card-body">
-          <h2 class="card-title">AvailableBooking</h2>
-      
-          <p>
-            <a class="btn btn-primary" data-toggle="collapse" href="tutorpage/#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample1">
-              StudentId-124<br>
-              StudentName-Kushboo
-            </a>
-          
-          </p>
-          <div class="collapse" id="tutorpage/#collapseExample2">
-            <div class="dropdown-item">
-              <a class="dropdown-item" type="text">StudentName-Kushboo</a><br>
-              <a class="dropdown-item" type="text">Address-Bondamunda</a><br>
-              <a class="dropdown-item" type="text">Board-CBSE</a><br>
-              <a class="dropdown-item" type="text">Class-10</a><br>
-              <a class="dropdown-item" type="text">Subject-Math</a><br>
-              <a class="dropdown-item" type="text">Topic-Algebra</a><br>
-              <a class="dropdown-item" type="text">Time Slot-10:30-11:30</a><br><br>
-              <button class="dropdown-item" type="text">Accept</button>  &nbsp; &nbsp; 
-              <button class="dropdown-item" type="text">Reject</button>
-
-            
-            </div>
+    <div class="col-sm-12 col-md-6">
+      <div class="panel panel-success">
+        <div class="panel-heading">
+          <h4>Accepted Bookings</h4>
+        </div>
+        <div class="panel-body">
+          <div class="container-fluid">
+            <app-acceptedBooking
+              [booking]="booking"
+              *ngFor="let booking of acceptedBookings"
+            ></app-acceptedBooking>
           </div>
         </div>
-        </div>
-        </div>
       </div>
-        
     </div>
-
+  </div>
+</div>
