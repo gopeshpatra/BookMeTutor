@@ -1,0 +1,15 @@
+.bg-white {
+  background-color: transparent;
+}
+.panel {
+  margin-left: -6.25%;
+  margin-right: -6.25%;
+  margin-top: -4.25%;
+}
+.pointer {
+  cursor: pointer;
+}
+
+.pointer:hover {
+  text-decoration: none;
+}

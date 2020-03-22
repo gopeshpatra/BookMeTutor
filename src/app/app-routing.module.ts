@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes,ActivatedRoute } from '@angular/router';
 import { HomepageComponent } from './homepage/homepage.component';
@@ -15,9 +16,7 @@ import { BookingPageComponent } from './userpage/booking-page/booking-page.compo
 import { UserpageComponent } from './userpage/userpage.component';
 import { ResetBookingComponent } from './userpage/reset-booking/reset-booking.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
-
-
-
+import { TutorPageComponent } from './tutor-page/tutor-page.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -34,21 +33,21 @@ children:[
   { path: 'login', component:LoginComponent },
   { path: 'studentSignup', component:StudentRegComponent },
   { path: 'tutorSignup', component:TutorRegComponent},
+
+  {
+    path: "tutorpage",
+    component: TutorPageComponent,
+    // children: [{ path: "profile", component: TutorProfileComponent }]
+    canActivate: [TutorGuard]
+  }]
   
 
   
-
-
-
-
-  
-  
-];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes,{onSameUrlNavigation: 'reload'}),
-    ],
+  imports: [RouterModule.forRoot(routes,{onSameUrlNavigation: 'reload'})],
   exports: [RouterModule],
-  providers:[AuthGuard,TutorGuard]
+providers:[AuthGuard,TutorGuard]
 })
-export class AppRoutingModule { }
+
+export class AppRoutingModule {}

@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient, HttpErrorResponse,HttpParams } from '@angular/common/http'
 import {Booking } from './Booking';
-import { from, throwError, Observable } from 'rxjs';
+import { throwError, Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { retry, catchError } from 'rxjs/operators';
-import { Cancel } from './classes/cancel';
-import { JsonPipe } from '@angular/common';
+
 
 @Injectable({
         providedIn:'root'
@@ -83,28 +82,11 @@ getUserDetails():Observable<any>
   )
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ loadTutorPage():Observable<any>{
+ return this.http .get( this.serverUrl+'/tutor/'+localStorage.getItem('mail')+'/booking',this.httpOptions)
+        }
+      
+     
 
 
 private handleError(error: HttpErrorResponse) {

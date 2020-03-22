@@ -1,0 +1,27 @@
+<div class="panel panel-default text-center">
+  <div class="panel-heading">
+    <h4>{{ this.booking.schedule | date: "medium" }}</h4>
+  </div>
+  <div class="panel-body">
+    <h4>Booking ID : {{ this.booking.id }} | {{ this.booking.student }}</h4>
+    <p>
+      Subject : {{ this.booking.subject }} | Topics : {{ this.booking.topic }}
+    </p>
+    <p>
+      Class : {{ this.booking.classNumber }}<sup>th</sup> | Board :
+      {{ this.booking.board }}
+    </p>
+    <p>{{ this.booking.line1 }} {{ this.booking.line2 }}</p>
+    <p>{{ this.booking.city }}-{{ this.booking.pincode }}</p>
+  </div>
+  <div class="panel-footer bg-white">
+    <div class="btn-group">
+      <button type="button" (click)="acceptBooking()" class="btn btn-success">
+        Accept
+      </button>
+      <button type="button" (click)="rejectBooking()" class="btn btn-danger">
+        Reject
+      </button>
+    </div>
+  </div>
+</div>

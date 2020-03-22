@@ -1,0 +1,37 @@
+<div class="panel panel-default text-center">
+  <div class="panel-heading">
+    <h4>March, 2020 : 9:00 AM</h4>
+  </div>
+  <div class="panel-body">
+    <h4>Booking ID : 123 | Shyam Sahoo</h4>
+    <p>Subject : Physics | Topics : Thermodynamics, Optics</p>
+    <p>Class : 8<sup>th</sup> | Board : CBSE</p>
+    <p>A-16, Sector 17</p>
+    <p>Rourkela-769005</p>
+  </div>
+  <div class="panel-footer bg-white">
+    <div class="input-group">
+      <input
+        class="form-control"
+        placeholder="SECRET"
+        type="text"
+        [(ngModel)]="secret"
+        pattern="[A-Z]{4}"
+        name="secret"
+      />
+      <span class="input-group-btn"
+        ><button type="button" class="btn btn-success" (click)="endSession()">
+          End Session
+        </button></span
+      >
+    </div>
+    <div [hidden]="!(secret.length > 4)">
+      <div>
+        <label class="text-warning" for="secret"
+          >Only 4 characters allowed</label
+        >
+      </div>
+      <div></div>
+    </div>
+  </div>
+</div>

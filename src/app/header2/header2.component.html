@@ -9,9 +9,19 @@
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav navbar-right">
           <li><a href="#feature"  *ngIf="!authenticationService.LoggedIn()">Features</a></li>
-     <li class="btn-trial"><a   routerLink="./mybookings" *ngIf="authenticationService.LoggedIn() && authenticationService.role==='student'">My Bookings</a></li>
-    <li class="btn-trial"><a routerLink="./profile" *ngIf="authenticationService.LoggedIn() && authenticationService.role==='student'">Profile</a></li>
-          <li class="btn-trial"><a  *ngIf="authenticationService.LoggedIn()"(click)="authenticationService.LoggedOut()">Logout</a></li>
+          
+     <li class="btn-trial">
+        <a  routerLink="./mybookings"
+         *ngIf="authenticationService.LoggedIn() && authenticationService.role==='student'">My Bookings</a>
+    </li>
+
+    <li class="btn-trial">
+      <a routerLink="./profile" *ngIf="authenticationService.LoggedIn() && authenticationService.role==='student'">Profile</a>
+    </li>
+
+     <li class="btn-trial">
+    <a  *ngIf="authenticationService.LoggedIn()"(click)="authenticationService.LoggedOut()">Logout</a>
+       </li>
         
         </ul>
       </div>

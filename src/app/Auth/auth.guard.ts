@@ -10,7 +10,7 @@ export class AuthGuard implements CanActivate {
     private authenticationService:AuthenticateService){}
 
 canActivate():boolean {
-if(this.authenticationService.LoggedIn())
+if(this.authenticationService.LoggedIn() && localStorage.getItem('role')==='student')
 {
 
 return true;

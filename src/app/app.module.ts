@@ -1,16 +1,19 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { AppComponent } from './app.component';
-import { HeaderComponent } from './homepage/header/header.component';
-import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { SliderComponent } from './homepage/slider/slider.component';
-import { Jumboltron1Component } from './homepage/jumboltron1/jumboltron1.component';
-import { Section1Component } from './homepage/section1/section1.component';
-import { FooterComponent } from './homepage/footer/footer.component';
-import { HomepageComponent } from './homepage/homepage.component';
 
-import { UserpageComponent } from './userpage/userpage.component';
-import {  FormsModule,ReactiveFormsModule} from "@angular/forms";
+import { AcceptedBookingComponent } from "./tutor-page/acceptedBooking/acceptedBooking.component";
+import { AvailableBookingComponent } from "./tutor-page/availableBooking/availableBooking.component";
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
+import { AppComponent } from "./app.component";
+import { HeaderComponent } from "./homepage/header/header.component";
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { SliderComponent } from "./homepage/slider/slider.component";
+import { Jumboltron1Component } from "./homepage/jumboltron1/jumboltron1.component";
+import { Section1Component } from "./homepage/section1/section1.component";
+import { FooterComponent } from "./homepage/footer/footer.component";
+import { HomepageComponent } from "./homepage/homepage.component";
+
+import { UserpageComponent } from "./userpage/userpage.component";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 import {
   MatCardModule,
@@ -20,9 +23,10 @@ import {
   MatListModule,
   MatStepperModule,
   MatInputModule,
-MatSelectModule,
-MatRadioModule,MatCheckboxModule
-} from '@angular/material';
+  MatSelectModule,
+  MatRadioModule,
+  MatCheckboxModule
+} from "@angular/material";
 
 import { ModalModule } from "ngx-bootstrap";
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
@@ -47,6 +51,9 @@ import { BookingPageComponent } from './userpage/booking-page/booking-page.compo
 import { ResetBookingComponent } from './userpage/reset-booking/reset-booking.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { Header2Component } from './header2/header2.component';
+import { TutorPageComponent } from './tutor-page/tutor-page.component';
+
+
 
 
 
@@ -73,8 +80,9 @@ import { Header2Component } from './header2/header2.component';
    
     MyBookingsComponent,
     LoginComponent,
-   StudentRegComponent,
+    StudentRegComponent,
     TutorRegComponent,
+
 
     
    
@@ -99,14 +107,17 @@ import { Header2Component } from './header2/header2.component';
    
    
 
-   
+    TutorPageComponent,
+    AvailableBookingComponent,
 
-   
-  
-    
-  
-    
-    
+    StudentProfileComponent,
+    BookingPageComponent,
+
+
+    ResetBookingComponent,
+
+    PagenotfoundComponent,
+    AcceptedBookingComponent
   ],
   imports: [
     BrowserModule,
@@ -114,18 +125,25 @@ import { Header2Component } from './header2/header2.component';
     ModalModule.forRoot(),
     AngularFontAwesomeModule,
     AppRoutingModule,
-    FormsModule,HttpClientModule,
+    FormsModule,
+    HttpClientModule,
 
     BrowserAnimationsModule,
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    MatStepperModule,MatInputModule,
-    MatInputModule,ReactiveFormsModule,MatSelectModule,MatRadioModule,MatCheckboxModule,MatCardModule
+    MatStepperModule,
+    MatInputModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    MatSelectModule,
+    MatRadioModule,
+    MatCheckboxModule,
+    MatCardModule
   ],
-  providers: [ BookingService,AuthenticateService ,AuthGuard,TutorGuard],
+  providers: [BookingService, AuthenticateService, AuthGuard, TutorGuard],
   bootstrap: [AppComponent],
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class AppModule { }
+export class AppModule {}

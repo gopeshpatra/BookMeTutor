@@ -1,43 +1,41 @@
+export class BookingResponse {
+  id: number;
 
-export class BookingResponse{
-    id: number ;
+  handler: string;
 
-	 handler: string ;
+  student: string;
 
-	  student :string;
+  subject: string;
 
-	  subject :string;
+  topic: string;
 
-	  topic :string;
+  classNumber: string;
 
-	  classNumber :string;
+  board: string;
 
-	  board :string;
+  line1: string;
 
-	  line1 :string;
+  line2: string;
 
-	  line2 :string;
+  city: string;
 
-	  city :string;
+  pincode: string;
 
-	  pincode :string;
+  schedule: Date;
 
-	  schedule :string;
+  deadline: Date;
 
-	 deadline :string;
+  rescheduled: boolean;
 
-	 rescheduled : boolean;
+  secret: string;
 
-	 secret :string  ;
+  score: number;
 
-	score:number;
+  comment: string;
 
-	  comment :string;
+  reason: string;
 
-	  reason:string;
+  status: string;
 
-      status:string;
-
-    
-
+  constructor() {}
 }
