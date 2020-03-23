@@ -45,7 +45,7 @@ children:[
   
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes,{onSameUrlNavigation: 'reload'})],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 providers:[AuthGuard,TutorGuard]
 })

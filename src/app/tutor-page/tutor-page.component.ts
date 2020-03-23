@@ -19,27 +19,36 @@ export class TutorPageComponent implements OnInit {
     private bookingservice: BookingService) {}
 
   ngOnInit() {
-    this.bookingservice.loadTutorPage().subscribe(
-      (responsebooking) => {
-        this.availableBookings = Object.assign([]);
-        this.acceptedBookings = Object.assign([]);
-        for (const booking of responsebooking) {
-          if (booking.status === "not assigned") {
-            this.availableBookings.push(booking);
-          }
-          if (booking.status === "assigned") {
-            this.acceptedBookings.push(booking);
-          }
-        }
-      },
-      error => {
-        error.status === 404
-          ? console.log("tutor not found")
-          : console.log(error.error);
-      }
-    );
-}
+    this.loadData();
+  }
+
+  reloadData() {
+    this.loadData();
+  }
+    
+
  
+loadData(){
+  this.bookingservice.getTutorPage().subscribe(
+    (responsebooking) => {
+      this.availableBookings = Object.assign([]);
+      this.acceptedBookings = Object.assign([]);
+      for (const booking of responsebooking) {
+        if (booking.status === "not assigned") {
+          this.availableBookings.push(booking);
+        }
+        if (booking.status === "assigned") {
+          this.acceptedBookings.push(booking);
+        }
+      }
+    },
+    error => {
+      error.status === 404
+        ? console.log("tutor not found")
+        : console.log(error.error);
+    }
+  );
+}
 
   
 }

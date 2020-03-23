@@ -82,7 +82,7 @@ getUserDetails():Observable<any>
   )
 }
 
- loadTutorPage():Observable<any>{
+ getTutorPage():Observable<any>{
  return this.http .get( this.serverUrl+'/tutor/'+localStorage.getItem('mail')+'/booking',this.httpOptions)
         }
       
