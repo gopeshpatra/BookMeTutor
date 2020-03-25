@@ -1,8 +1,7 @@
-
 import { MessageResponse } from "./../../Response/messageResponse";
-import { HttpClient, HttpHeaders, HttpErrorResponse } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { BookingResponse } from "./../../Response/bookingResponse";
-import { throwError, Observable } from 'rxjs';
+
 import { Component, OnInit, Input } from "@angular/core";
 
 @Component({
@@ -16,6 +15,7 @@ export class AcceptedBookingComponent implements OnInit {
 
   @Input() booking: BookingResponse;
 
+
   
   httpOptions={
 
@@ -25,6 +25,7 @@ export class AcceptedBookingComponent implements OnInit {
        } )
      };
 
+     serverUrl='http://bookmetutor-backend.ap-southeast-1.elasticbeanstalk.com';
 
 
   dataObserver = {
@@ -32,6 +33,7 @@ export class AcceptedBookingComponent implements OnInit {
       alert(data.getMessage);
     },
     error(error: Error) {
+
       switch (error.message) {
         case "400": {
           alert("Secret is mandatory");
@@ -42,15 +44,16 @@ export class AcceptedBookingComponent implements OnInit {
           break;
         }
         case "406": {
-          alert("Session not expired yet");
+     alert("Session not expired yet");
           break;
         }
         default:
           console.log("Something unexpected happened");
       }
     },
-    complete() {}
-  };
+        complete() {}
+};
+  
 
   constructor(private http: HttpClient) {}
 
@@ -59,12 +62,15 @@ export class AcceptedBookingComponent implements OnInit {
   endSession() {
     this.http
       .post(
-        "/tutor/" +localStorage.getItem('mail') + "/booking/" + this.booking.id + "/complete",
+
+       this.serverUrl+ "/tutor/" +localStorage.getItem('mail') + "/booking/" + this.booking.id + "/complete",
         {
           secret: this.secret
         },
         this.httpOptions
-      )
+        )
       .subscribe(this.dataObserver);
   }
-}
+
+  }
+

@@ -1,0 +1,123 @@
+<div class="row-panel"  *ngIf="this.booking.status!=='cancelled'" >
+    <mat-accordion >
+
+        <mat-expansion-panel>
+
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <h4><b>BOOKING ID:</b>{{this.booking.id}}</h4>                     
+            </mat-panel-title>
+            <mat-panel-description class="pull-right">
+              <h5 ><b>Secret OTP :</b> {{this.booking.secret}}</h5> 
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+        
+          <div class="col-md-6">
+         <p><b>Class: </b>{{this.booking.classNumber}}</p>
+          <p><b>Board: </b>{{this.booking.board}}</p>
+            <p><b>Subject: </b>{{this.booking.subject}}</p>
+            <p><b>Topic: </b>{{this.booking.topic}}</p>
+            <p><b>Schedule: </b>{{this.booking.schedule}}</p>
+            <p><b>Deadline: </b>{{this.booking.deadline}}</p>
+           </div>
+
+         <div class="col-md-6">
+          <p><b>Address: </b>{{this.booking.line1}} {{this.booking.line2}} {{this.booking.city}} {{this.booking.pincode}}</p>
+          <p class="bred"><b>Status: </b>{{this.booking.status}}</p>
+          <p class="bgreen"><b>Invoice: </b>Rs {{this.booking.invoiceResponse.amount}}</p>
+          </div>
+
+        </mat-expansion-panel>
+        
+      
+        <mat-expansion-panel [disabled]="isDisabled" >
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <h6 class="bgreen"><b>RESCHEDULE  BOOKING</b></h6>     
+            </mat-panel-title>
+            <mat-panel-description class="pull-right" *ngIf="this.isDisabled">
+                <h5 class="bgreen">Booking  Rescheduled</h5>  
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+
+          <form [formGroup]="rescheduleForm">
+             
+            <div class="col-md-6">
+             <mat-form-field>
+            <input matInput placeholder="comment"  formControlName="comment" > 
+          </mat-form-field>
+      
+          <mat-form-field>
+        <input matInput placeholder="score out of 5" formControlName="score" type="number" min="1" max="5">
+          </mat-form-field>
+       <br>
+       <mat-label><h5><b>Select Date</b></h5></mat-label>
+       <mat-radio-group aria-label="Select an option" formControlName="date">
+        <mat-radio-button value={{this.selectDate1}}>{{date1|date:'dd MMM,yyy'}}</mat-radio-button>
+            <mat-radio-button value={{this.selectDate2}}>{{date2|date:'dd MMM,yyy'}}</mat-radio-button>
+           <mat-radio-button value={{this.selectDate3}}>{{date3|date:'dd MMM,yyy'}}</mat-radio-button>
+      </mat-radio-group>
+      <p class ="bred" *ngIf="rescheduleForm.get('date').invalid">Please choose a time</p>
+      </div>
+
+           <div class="col-md-6">
+            <mat-label><h5><b>Select Time</b></h5></mat-label>
+            <mat-radio-group formControlName="time">
+            <mat-radio-button *ngFor="let options of times" [value]="options.value">{{options.display}}</mat-radio-button>
+            </mat-radio-group>
+             
+            <p class ="bred" *ngIf="rescheduleForm.get('time').invalid">Please choose a time</p>
+            <mat-action-row>
+                <button mat-button class="btn btn-success button-reschedule" (click)="updateBooking()">Reschedule</button>
+              </mat-action-row>
+             </div>
+            
+            </form>
+          
+
+        </mat-expansion-panel>
+        
+        
+        
+
+        
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                             (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <h6 class="bred"><b>CANCEL  BOOKING</b></h6>     
+            </mat-panel-title>
+            <mat-panel-description class="pull-right">
+             Cancellation can be done 3 hours before scheduled time for refund
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+
+           <form [formGroup]="cancelForm">
+             
+          <div class="col-md-6">
+           <mat-form-field>
+              <mat-label> Select cancellation reason</mat-label>
+              <mat-select formControlName="cancelReason">
+                <mat-option>--</mat-option>
+                <mat-option value="customer can't take service .Plan Changed">customer can't take service .Plan Changed</mat-option>
+                <mat-option value="customer don't need service">customer don't need service</mat-option>
+            </mat-select>
+         </mat-form-field>
+         </div>
+         <div class="col-md-3">
+           <button class="btn btn-danger" (click)="cancelBooking()">Cancel</button>
+           </div>
+
+          </form>
+          
+
+        </mat-expansion-panel>
+
+
+
+
+      </mat-accordion>
+    </div>
+
+ 
+

@@ -1,0 +1,33 @@
+<div class="row-panel" >
+    <mat-accordion>
+
+      <mat-expansion-panel>
+
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <h4><b>BOOKING ID:</b>{{this.booking.id}}</h4>                     
+          </mat-panel-title>
+          <mat-panel-description class="pull-right">
+            <h5 class="bred"><b>Booking  cancelled</b></h5>       
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+      
+        <div class="col-md-6">
+       <p><b>Class: </b>{{this.booking.classNumber}}</p>
+        <p><b>Board: </b>{{this.booking.board}}</p>
+          <p><b>Subject: </b>{{this.booking.subject}}</p>
+          <p><b>Topic: </b>{{this.booking.topic}}</p>
+          <p><b>Schedule: </b>{{this.booking.schedule}}</p>
+          <p><b>Deadline: </b>{{this.booking.deadline}}</p>
+         </div>
+
+       <div class="col-md-6">
+        <p><b>Address: </b>{{this.booking.line1}} {{this.booking.line2}} {{this.booking.city}} {{this.booking.pincode}}</p>
+        <h5 ><b>Secret OTP :</b> {{this.booking.secret}}</h5> 
+        <p class="bred"><b>Status: </b>{{this.booking.status}}</p>
+        <p class="bgreen"><b>Invoice: </b>Rs {{this.booking.invoiceResponse.amount}}</p>
+        </div>
+      
+</mat-expansion-panel>
+</mat-accordion>
+  </div>

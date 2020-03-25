@@ -1,5 +1,4 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-
 import { BookingResponse } from "./../../Response/bookingResponse";
 import { Component, OnInit, Input, Output } from "@angular/core";
 import { EventEmitter } from "@angular/core";
@@ -11,6 +10,7 @@ import { EventEmitter } from "@angular/core";
 })
 export class AvailableBookingComponent implements OnInit {
   @Input() booking: BookingResponse;
+
 
   @Output() statusChange = new EventEmitter<void>();
 
@@ -27,6 +27,7 @@ export class AvailableBookingComponent implements OnInit {
      };
     
 
+
   constructor(private http: HttpClient) {}
 
   ngOnInit() {}
@@ -34,12 +35,12 @@ export class AvailableBookingComponent implements OnInit {
   acceptBooking() {
     this.http
       .get(
+
         this.serverUrl +
-        '/tutor/'+localStorage.getItem('mail')+'/booking' +
+        '/tutor/'+localStorage.getItem('mail')+'/booking/' +
           this.booking.id +
           "/accept",
-          this.httpOptions
-        )
+          this.httpOptions)
       .subscribe(
         data => this.statusChange.emit(),
         error => console.log(error)
@@ -50,14 +51,14 @@ export class AvailableBookingComponent implements OnInit {
    this.http
       .get(
         this.serverUrl +
-        '/tutor/'+localStorage.getItem('mail')+'/booking' +
+        '/tutor/'+localStorage.getItem('mail')+'/booking/' +
           this.booking.id +
-          "/accept",
+          "/reject",
           this.httpOptions
-        )
-      .subscribe(
+        ) .subscribe(
         data => this.statusChange.emit(),
         error => console.log(error)
       );
+
 }
 }

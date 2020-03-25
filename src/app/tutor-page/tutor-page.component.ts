@@ -1,9 +1,10 @@
 // tslint:disable: quotemark
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-
 import { BookingResponse } from "src/app/Response/bookingResponse";
 import { Component, OnInit } from "@angular/core";
+
 import { BookingService } from '../userpage/BookingService';
+
 
 @Component({
   selector: "app-tutor-page",
@@ -11,6 +12,7 @@ import { BookingService } from '../userpage/BookingService';
   styleUrls: ["./tutor-page.component.css"]
 })
 export class TutorPageComponent implements OnInit {
+
   responsebooking:BookingResponse[];
   availableBookings: BookingResponse[] = [];
   acceptedBookings: BookingResponse[] = [];
@@ -24,6 +26,7 @@ export class TutorPageComponent implements OnInit {
 
   reloadData() {
     this.loadData();
+ 
   }
     
 
@@ -34,7 +37,7 @@ loadData(){
       this.availableBookings = Object.assign([]);
       this.acceptedBookings = Object.assign([]);
       for (const booking of responsebooking) {
-        if (booking.status === "not assigned") {
+        if (booking.status === "unAssigned") {
           this.availableBookings.push(booking);
         }
         if (booking.status === "assigned") {
@@ -50,5 +53,7 @@ loadData(){
   );
 }
 
-  
+
+ 
+
 }

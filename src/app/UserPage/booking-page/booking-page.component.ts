@@ -74,7 +74,7 @@ selectDate2:string=this.secondyear+'-'+this.secondmonth+'-'+this.seconddate;
 
 date3= this.todaydate.setDate(this.todaydate.getDate() + 1);
 getdate3=this.todaydate.getDate()
-thirddate=('0'+this.getdate2).slice(-2)
+thirddate=('0'+this.getdate3).slice(-2)
 getmonth3=this.todaydate.getMonth()+1;
 thirdmonth=('0'+this.getmonth3).slice(-2)
 thirdyear=this.todaydate.getFullYear();

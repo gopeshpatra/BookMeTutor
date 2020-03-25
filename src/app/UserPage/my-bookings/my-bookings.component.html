@@ -1,131 +1,52 @@
-<br><br><br>
-
-<!--<div  *ngFor="let booking of responsebooking">
-<app-bookingcard [booking]="booking" ></app-bookingcard>
-</div>--->
-<div class ="row">
-
-<div class="col-md-6">
-  <table class="table table-bordered table-hover ">
-    <thead>
-      <th class="text-center"><h4>My Bookings</h4></th>
-     </thead>
-    <tbody >
-      <div class="row"  *ngFor="let booking of responsebooking">
-         
-      <div class="col-4" *ngIf="booking.status!=('cancelled')" >
-           <div class="thumbnail">
-               <div class="caption">
-                
-                 <div class='col-lg-12 well well-add-card'>
-                     <h4><b>BOOKING ID:</b>{{this.booking.id}}                     
-                          <h5 class="pull-right"><b>Secret OTP :</b> {{this.booking.secret}}</h5> </h4>
-                     
-                 </div>
-                 <div class='col-lg-12'>
-                     <p><b>Class:</b>{{this.booking.classNumber}}</p>
-                   <p><b>Board:</b>{{this.booking.board}}</p>
-                     <p><b>Subject:</b>{{this.booking.subject}}</p>
-                     <p><b>Topic:</b>{{this.booking.topic}}</p>
-                     <p><b>Schedule:</b>{{this.booking.schedule}}</p>
-                     <p><b>Deadline:</b>{{this.booking.deadline}}</p>
-                     <p><b>Address:</b>{{this.booking.line1}} {{this.booking.line2}} {{this.booking.city}} {{this.booking.pincode}}</p>
-                 </div>
-                 <div class='col-lg-12'  >
-                   <div class="card  bg-danger mb-3">
-                       <div class="card-header">
-                           <p><b>Status:</b> </p>
-                       </div>
-                       <div class="card-body">
-                         <p class="card-title" >{{this.booking.status}}</p>
-                       </div>
-                       </div>
-                 </div>
-                 <div class='col-lg-12'>
-                   <div class="card  bg-info mb-3">
-                       <div class="card-header">
-                           <p><b>Invoice:</b> </p>
-                       </div>
-                       <div class="card-body">
-                         <p class="card-title">Rs {{this.booking.invoiceResponse.amount}}</p>
-                       </div>
-                     </div>
-                 </div>
-                 <button type="button" class="btn btn-primary btn-xs btn-update btn-add-card" routerLink="/reset">Reschedule</button>
-                 <button type="button" class="btn btn-danger btn-xs btn-update btn-add-card" (click)="deleteBooking(this.booking.id)">Cancel</button>
-             </div>
-           </div>
-         </div>
-         
-         </div>
-         
-   
+<div class="container">
+<div class="panel panel-info">
+        <div class="panel-heading">
+          
+         <a  href="/userpage/mybookings#yourbookings " (click)="clickedBookingLink()"><b>My Bookings</b></a>
+        <a  href="/userpage/mybookings#cancelledbookings " (click)="clickedCancelLink()"><b>Cancelled Bookings</b></a>
+         <a  href="/userpage/mybookings#completedbookings " (click)="clickedCompletedLink()"><b>Completed Bookings</b></a>
        
-       
- </tbody>
-</table>
-
-</div>
+       </div>
+  </div> 
 </div>
 
 
+<!----Your Bookings-->
+<div class="container-fluid" *ngIf="clickedBooking===true" >
+  <div class="container-check" *ngIf="bookings.length===0 ; else show">
+    <h4> No  Bookings  Found </h4>
+   </div>
+  <ng-template #show>
+  <app-yourbookings (statusChange)="reloaddata()"  [booking]="booking"  *ngFor="let booking of bookings" ></app-yourbookings>
+  </ng-template>
+</div>     
+<!----/Your Bookings-->
 
-   
-    <br><br><br>
-    <h3> Cancelled Bookings</h3>
 
-      
-    <div class="row">
-      <div class="col-3" *ngFor="let booking of responsebooking" >
-      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4" *ngIf="booking.status===('cancelled')" >
-           <div class="thumbnail">
-               <div class="caption">
-                
-                 <div class='col-lg-12 well well-add-card'>
-                     <h4><b>BOOKING ID:</b>{{this.booking.id}}                     
-                          <h5 class="pull-right"><b>Secret OTP :</b> {{this.booking.secret}}</h5> </h4>
-                     
-                 </div>
-                 <div class='col-lg-12'>
-                     <p><b>Class:</b>{{this.booking.classNumber}}</p>
-                   <p><b>Board:</b>{{this.booking.board}}</p>
-                     <p><b>Subject:</b>{{this.booking.subject}}</p>
-                     <p><b>Topic:</b>{{this.booking.topic}}</p>
-                     <p><b>Schedule:</b>{{this.booking.schedule}}</p>
-                     <p><b>Deadline:</b>{{this.booking.deadline}}</p>
-                     <p><b>Address:</b>{{this.booking.line1}} {{this.booking.line2}} {{this.booking.city}} {{this.booking.pincode}}</p>
-                 </div>
-                 <div class='col-lg-12'>
-                   <div class="card  bg-danger mb-3">
-                       <div class="card-header">
-                           <p><b>Status:</b> </p>
-                       </div>
-                       <div class="card-body">
-                         <p class="card-title">{{this.booking.status}}</p>
-                       </div>
-                       </div>
-                 </div>
-                 <div class='col-lg-12'>
-                   <div class="card  bg-info mb-3">
-                       <div class="card-header">
-                           <p><b>Invoice:</b> </p>
-                       </div>
-                       <div class="card-body">
-                         <p class="card-title">Rs {{this.booking.invoiceResponse.amount}}</p>
-                       </div>
-                     </div>
-                 </div>
-                 <button type="button" class="btn btn-primary btn-xs btn-update btn-add-card" routerLink="/reset">Reschedule</button>
-                 <button type="button" class="btn btn-danger btn-xs btn-update btn-add-card" (click)="deleteBooking(this.booking.id)">Cancel</button>
-             </div>
-           </div>
-         </div>
-         </div>
-   
-   
-   
-    
-      
+<!-----Cancelled Bookings-->
+<div class="container-fluid" *ngIf="clickedCancel===true" >
+  <div class="container-check" *ngIf="cancelledbookings.length===0 ; else show">
+   <h4> No Bookings Found </h4>
+  </div>
+ <ng-template #show>
+   <app-cancelledbookings  [booking]="booking"  *ngFor="let booking of cancelledbookings" ></app-cancelledbookings>
+  </ng-template>
+</div>
+<!---/cancelled Bookings-->
+
+<!-----Completed Bookings-->
+<div class="container-fluid" *ngIf="clickedCompleted===true" >
+  <div class="container-check" *ngIf="completedbookings.length===0 ; else show">
+    <h4> No Bookings Found </h4>
+   </div>
+  <ng-template #show>
+   <app-completedbookings  [booking]="booking"  *ngFor="let booking of completedbookings" ></app-completedbookings>
+   </ng-template>
+  </div>
+  <!---/completed Bookings-->
 
 
 
+
+
+ 

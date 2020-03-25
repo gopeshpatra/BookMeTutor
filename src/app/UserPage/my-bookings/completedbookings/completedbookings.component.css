@@ -1,0 +1,43 @@
+.container-fluid {
+    padding-top: 10px;
+  
+  }
+
+  .mat-form-field + .mat-form-field {
+    margin-left: 8px;
+  }
+
+  .row-panel{
+    margin-top:30px;
+    padding-left:10%;
+    padding-right:10%;
+
+  }
+
+  .bred{
+      color:red
+  }
+
+ .bgreen{
+      color:green
+  }
+
+mat-accordion{
+      color:goldenrod
+  }
+  
+
+h6{
+    font-family: Open Sans, sans-serif;
+}
+h3{
+    margin-left: 25px;
+    color:blueviolet;
+    size: 20px;
+    font-family: Open Sans, sans-serif;
+}
+h5{
+    color:rgb(106, 7, 199);
+    size:15px;
+    font-family: Open Sans, sans-serif;
+}

@@ -12,9 +12,11 @@ export class TutorGuard implements CanActivate {
   ) {}
 
   canActivate(): boolean {
-    if (this.authenticationService.LoggedIn() && localStorage.getItem('role')==='tutor') {
-      return true;
-    } else {
+
+ if (this.authenticationService.LoggedIn() && localStorage.getItem('role')==='tutor') {
+       return true;
+    } 
+    else {
       this.router.navigate(["/login"]);
       return false;
     }

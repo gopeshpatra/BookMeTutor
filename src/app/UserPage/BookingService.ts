@@ -4,6 +4,7 @@ import {Booking } from './Booking';
 import { throwError, Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { retry, catchError } from 'rxjs/operators';
+import { Cancel } from './classes/cancel';
 
 
 @Injectable({
@@ -18,22 +19,13 @@ export class BookingService{
  serverUrl='http://bookmetutor-backend.ap-southeast-1.elasticbeanstalk.com';
 
 httpOptions={
-
 headers:new HttpHeaders({
  'Content-Type':'application/json',
  'Authorization':localStorage.getItem('token')
    } )
  };
 
- deleteOptions={
-  headers:new HttpHeaders({
-    'Content-Type':'application/json',
-    'Authorization':localStorage.getItem('token')
-    } ),
-    body:JSON.stringify({
-      reason : ''
-    })
- }
+
       
  constructor(private http:HttpClient,
           private router:Router) { }
@@ -63,19 +55,20 @@ getBooking():Observable<any>
   return this.http.get(this.serverUrl+'/user/'+localStorage.getItem('mail')+'/booking',this.httpOptions)
 }
 
-cancelBooking(id:number):Observable<void>{
- 
 
-  return this.http.delete<void>(this.serverUrl+'/user/'+localStorage.getItem('mail')+'/booking/'+id,this.deleteOptions).
-  pipe(
-     
-    catchError(this.handleError)
- )
-}
 
 getUserDetails():Observable<any>
 {
   return this.http.get(this.serverUrl+'/user/'+localStorage.getItem('mail'),this.httpOptions).
+  pipe(
+     
+    catchError(this.handleError)
+  )
+}
+
+getTutoretails():Observable<any>
+{
+  return this.http.get(this.serverUrl+'/tutor/'+localStorage.getItem('mail'),this.httpOptions).
   pipe(
      
     catchError(this.handleError)

@@ -15,6 +15,9 @@ import { HomepageComponent } from "./homepage/homepage.component";
 import { UserpageComponent } from "./userpage/userpage.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatRadioModule} from '@angular/material/radio';
+
 import {
   MatCardModule,
   MatButtonModule,
@@ -24,11 +27,13 @@ import {
   MatStepperModule,
   MatInputModule,
   MatSelectModule,
-  MatRadioModule,
+
   MatCheckboxModule
+ 
 } from "@angular/material";
 
 import { ModalModule } from "ngx-bootstrap";
+
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -48,10 +53,17 @@ import { TutorGuard } from './Auth/tutor.guard';
 import { StudentProfileComponent } from './userpage/student-profile/student-profile.component';
 
 import { BookingPageComponent } from './userpage/booking-page/booking-page.component';
-import { ResetBookingComponent } from './userpage/reset-booking/reset-booking.component';
+
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { Header2Component } from './header2/header2.component';
 import { TutorPageComponent } from './tutor-page/tutor-page.component';
+
+import { YourbookingsComponent } from './UserPage/my-bookings/yourbookings/yourbookings.component';
+import { CancelledbookingsComponent } from './UserPage/my-bookings/cancelledbookings/cancelledbookings.component';
+import { CompletedbookingsComponent } from './UserPage/my-bookings/completedbookings/completedbookings.component';
+import { TutorProfileComponent } from './tutor-page/tutor-profile/tutor-profile.component';
+
+
 
 
 
@@ -83,41 +95,23 @@ import { TutorPageComponent } from './tutor-page/tutor-page.component';
     StudentRegComponent,
     TutorRegComponent,
 
-
-    
-   
-    
-   
     StudentProfileComponent,
+     BookingPageComponent,
     
-   
-    
-   
+     PagenotfoundComponent,
+     Header2Component,
+     TutorPageComponent,
+  AvailableBookingComponent,
+StudentProfileComponent,
     BookingPageComponent,
-    
-   
-    ResetBookingComponent,
-    
-   
     PagenotfoundComponent,
-    
+    AcceptedBookingComponent,
+
+    YourbookingsComponent,
+    CancelledbookingsComponent,
+    CompletedbookingsComponent,
+    TutorProfileComponent,
    
-    Header2Component,
-    
-   
-   
-
-    TutorPageComponent,
-    AvailableBookingComponent,
-
-    StudentProfileComponent,
-    BookingPageComponent,
-
-
-    ResetBookingComponent,
-
-    PagenotfoundComponent,
-    AcceptedBookingComponent
   ],
   imports: [
     BrowserModule,
@@ -135,12 +129,13 @@ import { TutorPageComponent } from './tutor-page/tutor-page.component';
     MatListModule,
     MatStepperModule,
     MatInputModule,
-    MatInputModule,
+   
     ReactiveFormsModule,
     MatSelectModule,
     MatRadioModule,
     MatCheckboxModule,
-    MatCardModule
+    MatCardModule,
+    MatExpansionModule
   ],
   providers: [BookingService, AuthenticateService, AuthGuard, TutorGuard],
   bootstrap: [AppComponent],
