@@ -12,6 +12,7 @@ import{Router} from '@angular/router';
 export class LoginComponent implements OnInit {
   loginForm:FormGroup;
   error:String;
+  rememberCheck:boolean
   constructor(private authenticationService:AuthenticateService,
                private router:Router) { }
 
@@ -32,6 +33,8 @@ export class LoginComponent implements OnInit {
     this. login.email=this.loginForm.get('email').value;
     this.login.password=this.loginForm.get('password').value;
     this.login.role=this.loginForm.get('role').value;
+   this.login.isRememberMe=this.loginForm.get('isRememberMe').value.toString()
+ 
     
     console.log(this.login)
 
@@ -41,10 +44,11 @@ export class LoginComponent implements OnInit {
          localStorage.setItem('token','Bearer '+response.jwtToken)
          localStorage.setItem('role',this.login.role)
          localStorage.setItem('mail',this.login.email)
+         localStorage.setItem('isRememberMe',this.login.isRememberMe)
          if(this.login.role==='student')
          this.router.navigate(['/userpage/booking'])
          else if(this.login.role==='tutor')
-         this.router.navigate(['/tutorpage'])
+         this.router.navigate(['/tutorpage/tutorbookings'])
        
       },
    

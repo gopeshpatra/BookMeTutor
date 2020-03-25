@@ -13,6 +13,7 @@ import { TutorRegister } from '../Request/tutorRegister';
 })
 export class AuthenticateService {
   serverUrl='http://bookmetutor-backend.ap-southeast-1.elasticbeanstalk.com';
+  
   role:string;
 
   httpOptions={
@@ -64,6 +65,7 @@ export class AuthenticateService {
      localStorage.removeItem('token')
      localStorage.removeItem('role')
      localStorage.removeItem('mail')
+     localStorage.removeItem('isRememberMe')
      this.router.navigate([''])
   }
 

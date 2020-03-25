@@ -66,7 +66,7 @@ getUserDetails():Observable<any>
   )
 }
 
-getTutoretails():Observable<any>
+getTutorDetails():Observable<any>
 {
   return this.http.get(this.serverUrl+'/tutor/'+localStorage.getItem('mail'),this.httpOptions).
   pipe(

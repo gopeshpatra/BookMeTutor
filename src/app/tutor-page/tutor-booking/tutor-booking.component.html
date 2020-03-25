@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-6">
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <h4>Available Bookings</h4>
+          </div>
+          <div class="panel-body">
+            <div class="container-fluid">
+              <app-availableBooking
+                (statusChange)="reloadData()"
+                [booking]="booking"
+                *ngFor="let booking of availableBookings"
+              ></app-availableBooking>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-sm-12 col-md-6">
+        <div class="panel panel-success">
+          <div class="panel-heading">
+            <h4>Accepted Bookings</h4>
+          </div>
+          <div class="panel-body">
+            <div class="container-fluid">
+              <app-acceptedBooking
+                [booking]="booking"
+                *ngFor="let booking of acceptedBookings"
+              ></app-acceptedBooking>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  </div>
+  

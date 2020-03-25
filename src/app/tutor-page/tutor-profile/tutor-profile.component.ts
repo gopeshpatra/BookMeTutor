@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TutorDetails } from '../classes/tutorDetails';
+import { BookingService } from 'src/app/userpage/BookingService';
 
 @Component({
   selector: 'app-tutor-profile',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TutorProfileComponent implements OnInit {
 
-  constructor() { }
+  tutordetails:TutorDetails
+ 
+
+  constructor(private bookingservice: BookingService) { }
 
   ngOnInit() {
-  }
+    this.bookingservice.getTutorDetails().subscribe
+    (
+      data=>
+      {this.tutordetails=data}
+    )
 
+}
 }

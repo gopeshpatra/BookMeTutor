@@ -55,13 +55,14 @@ import { StudentProfileComponent } from './userpage/student-profile/student-prof
 import { BookingPageComponent } from './userpage/booking-page/booking-page.component';
 
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
-import { Header2Component } from './header2/header2.component';
+
 import { TutorPageComponent } from './tutor-page/tutor-page.component';
 
 import { YourbookingsComponent } from './UserPage/my-bookings/yourbookings/yourbookings.component';
 import { CancelledbookingsComponent } from './UserPage/my-bookings/cancelledbookings/cancelledbookings.component';
 import { CompletedbookingsComponent } from './UserPage/my-bookings/completedbookings/completedbookings.component';
 import { TutorProfileComponent } from './tutor-page/tutor-profile/tutor-profile.component';
+import { TutorBookingComponent } from './tutor-page/tutor-booking/tutor-booking.component';
 
 
 
@@ -99,7 +100,7 @@ import { TutorProfileComponent } from './tutor-page/tutor-profile/tutor-profile.
      BookingPageComponent,
     
      PagenotfoundComponent,
-     Header2Component,
+  
      TutorPageComponent,
   AvailableBookingComponent,
 StudentProfileComponent,
@@ -111,6 +112,8 @@ StudentProfileComponent,
     CancelledbookingsComponent,
     CompletedbookingsComponent,
     TutorProfileComponent,
+
+    TutorBookingComponent
    
   ],
   imports: [

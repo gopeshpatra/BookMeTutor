@@ -8,26 +8,45 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
         <li>
-          <a href="#feature" 
+          <a href="#feature" *ngIf="!authenticationService.LoggedIn()"
             >Features</a
           >
         </li>
         <li>
-          <a href="#pricing" 
+          <a href="#pricing" *ngIf="!authenticationService.LoggedIn()"
             >Pricing</a
           >
         </li>
 
         <li class="btn-trial">
-          <a routerLink="/login" 
+          <a routerLink="/login" *ngIf="!authenticationService.LoggedIn()"
             >Login</a
           >
         </li>
         <li class="btn-trial">
           <a
-            routerLink="/studentSignup"
+            routerLink="/studentSignup"  *ngIf="!authenticationService.LoggedIn()"
            >Sign in</a>
         </li>
+
+           <li class="btn-trial">
+            <a  routerLink="./userpage/mybookings"
+             *ngIf="authenticationService.LoggedIn() && authenticationService.role==='student'">My Bookings</a>
+        </li>
+    
+        <li class="btn-trial">
+          <a routerLink="./userpage/userprofile" *ngIf="authenticationService.LoggedIn() && authenticationService.role==='student'">Profile</a>
+        </li>
+    
+        <li class="btn-trial">
+          <a routerLink="./tutorpage/tutorprofile" *ngIf="authenticationService.LoggedIn() && authenticationService.role==='tutor'">Profile</a>
+        </li>
+    
+         <li class="btn-trial">
+        <a  *ngIf="authenticationService.LoggedIn()"(click)="authenticationService.LoggedOut()">Logout</a>
+           </li>
+            
+        
         </ul>
     </div>
   </div>

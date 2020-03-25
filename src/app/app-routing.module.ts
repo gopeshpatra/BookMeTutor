@@ -19,31 +19,33 @@ import { UserpageComponent } from './userpage/userpage.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { TutorPageComponent } from './tutor-page/tutor-page.component';
 import { TutorProfileComponent } from './tutor-page/tutor-profile/tutor-profile.component';
+import { TutorBookingComponent } from './tutor-page/tutor-booking/tutor-booking.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
+  { path: 'login', component:LoginComponent },
+  { path: 'studentSignup', component:StudentRegComponent },
+  { path: 'tutorSignup', component:TutorRegComponent},
 
-
-{
+ {
   path:'userpage',component:UserpageComponent,
   children:[
   { path: 'mybookings', component: MyBookingsComponent},
-  { path: 'profile', component: StudentProfileComponent },
+  { path: 'userprofile', component: StudentProfileComponent },
   { path: 'booking', component: BookingPageComponent},
   ],
 canActivate:[AuthGuard]
 },
     
-  { path: 'login', component:LoginComponent },
-  { path: 'studentSignup', component:StudentRegComponent },
-  { path: 'tutorSignup', component:TutorRegComponent},
-
-  {
-    path: "tutorpage",
-    component: TutorPageComponent,
-   children: [{ path: "profile", component: TutorProfileComponent }],
+{
+  path: "tutorpage", component: TutorPageComponent, 
+  children: [
+     {  path:'tutorbookings', component:TutorBookingComponent},
+     { path: 'tutorprofile', component: TutorProfileComponent },
+     ],
     canActivate: [TutorGuard]
-  },
+   },
+
   { path: "**", component: PagenotfoundComponent }
 ]
   
